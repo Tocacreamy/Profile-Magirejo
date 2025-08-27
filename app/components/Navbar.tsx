@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "Beranda", href: "#beranda" },
-    { name: "Tentang", href: "#tentang" },
-    { name: "Organisasi", href: "#organisasi" },
-    { name: "UMKM", href: "#umkm" },
-    { name: "Fasilitas", href: "#fasilitas" },
+    { name: "Beranda", href: "/" },
+    { name: "Tentang", href: "/tentang" },
+    { name: "Organisasi", href: "/organisasi" },
+    { name: "UMKM", href: "/umkm" },
+    { name: "Fasilitas", href: "/fasilitas" },
   ];
 
   return (
@@ -28,13 +29,13 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -88,14 +89,14 @@ export default function Navbar() {
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 bg-black/30 backdrop-blur-sm">
           {menuItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-white hover:text-gray-300 hover:bg-white/10 block px-3 py-2 text-base font-medium transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
