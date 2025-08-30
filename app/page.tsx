@@ -88,6 +88,110 @@ export default function Home() {
           </motion.button>
         </div>
       </section>
+      {/* Section Visi dan Misi */}
+      <section id="visi-misi" className="relative w-full bg-white">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
+          >
+            Visi dan Misi
+          </motion.h2>
+
+          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+            {/* Visi */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="rounded-2xl border p-6 md:p-8 shadow-sm bg-white"
+            >
+              <h3 className="text-lg font-semibold text-gray-900">Visi</h3>
+              <p className="mt-3 text-gray-700 leading-relaxed">
+                "Mewujudkan Padukuhan Magirejo sebagai padukuhan mandiri
+                berbasis budaya, sejahtera melalui pertanian dan peternakan,
+                serta berdaya dalam menjaga kesehatan masyarakat dengan semangat
+                gotong royong."
+              </p>
+            </motion.div>
+
+            {/* Misi */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              className="rounded-2xl border p-6 md:p-8 shadow-sm bg-white"
+            >
+              <h3 className="text-lg font-semibold text-gray-900">Misi</h3>
+              <ul className="mt-3 space-y-3 text-gray-700">
+                <motion.li
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+                  className="pl-6 relative"
+                >
+                  <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-blue-600" />
+                  Mengembangkan potensi lokal melalui pelestarian budaya
+                  tradisional seperti gamelan, jatilan, dan rebana, serta
+                  mendukung Magirejo sebagai bagian dari Desa Mandiri Budaya.
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+                  className="pl-6 relative"
+                >
+                  <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-blue-600" />
+                  Meningkatkan kesejahteraan ekonomi masyarakat dengan penguatan
+                  sektor pertanian dan peternakan yang ramah lingkungan dan
+                  berkelanjutan.
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 }}
+                  className="pl-6 relative"
+                >
+                  <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-blue-600" />
+                  Mengatasi tantangan kesehatan masyarakat, khususnya pencegahan
+                  dan penurunan angka stunting melalui optimalisasi posyandu dan
+                  peningkatan gizi keluarga.
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
+                  className="pl-6 relative"
+                >
+                  <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-blue-600" />
+                  Mendorong partisipasi warga dalam pembangunan dusun melalui
+                  semangat gotong royong, kebersamaan, dan solidaritas sosial.
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: 0.25 }}
+                  className="pl-6 relative"
+                >
+                  <span className="absolute left-0 top-2 h-2 w-2 rounded-full bg-blue-600" />
+                  Menjaga kelestarian lingkungan perbukitan dan tanah kapur
+                  melalui penghijauan, pengelolaan air, serta upaya konservasi.
+                </motion.li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Section konten dengan efek muncul saat discroll */}
       <section id="jelajahi" className="relative w-full bg-white">
@@ -101,36 +205,55 @@ export default function Home() {
           >
             Sekilas Tentang Magirejo
           </motion.h2>
+          <div className="mt-10 grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative mx-auto w-full max-w-md overflow-hidden bg-gradient-to-br p-8"
+            >
+              <div className="relative mx-auto aspect-video w-full">
+                <Image
+                  src="/logo text landscape.svg"
+                  alt="Logo Padukuhan Magirejo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </motion.div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {[
-              {
-                title: "Kebersamaan",
-                desc: "Warga saling gotong royong dalam berbagai kegiatan.",
-              },
-              {
-                title: "Budaya",
-                desc: "Tradisi dan kekayaan budaya yang terus dilestarikan.",
-              },
-              {
-                title: "Kemajuan",
-                desc: "Program pemberdayaan untuk kemajuan padukuhan.",
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-                className="rounded-xl border bg-white p-5 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">{card.desc}</p>
-              </motion.div>
-            ))}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              className="text-gray-700"
+            >
+              <p className="text-base leading-relaxed">
+                Padukuhan Magirejo adalah komunitas yang menjunjung tinggi nilai
+                kebersamaan, gotong royong, dan pelestarian budaya. Berbagai
+                program pemberdayaan, ekonomi kreatif, serta kegiatan sosial
+                dilaksanakan secara berkelanjutan untuk mewujudkan lingkungan
+                yang maju dan harmonis.
+              </p>
+              {/* <ul className="mt-6 space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
+                  Penguatan kapasitas masyarakat melalui pelatihan dan kegiatan.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
+                  Pelestarian tradisi dan budaya lokal secara inklusif.
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
+                  Sinergi antarwarga untuk pembangunan berkelanjutan.
+                </li>
+              </ul> */}
+            </motion.div>
           </div>
         </div>
       </section>

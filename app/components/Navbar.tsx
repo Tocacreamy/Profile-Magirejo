@@ -24,7 +24,7 @@ export default function Navbar() {
             <span className="text-black font-semibold text-lg">
               <Link href="/" className="inline-flex items-center gap-2">
                 <Image
-                  src="/logo text landscape.svg"
+                  src="/logo text landscape white.svg"
                   alt="Padukuhan Magirejo"
                   width={100}
                   height={100}
