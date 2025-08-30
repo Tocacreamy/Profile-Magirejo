@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, easeInOut } from "framer-motion";
 import { carouselImages } from "@/app/lib/carouselImages";
 
 export default function Home() {
@@ -31,9 +31,9 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             exit={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{
-              opacity: { duration: 0.1, ease: [0.42, 0, 0.58, 1] },
-              scale: { duration: 4, ease: [0.42, 0, 0.58, 1] },
-              rotate: { duration: 4, ease: [0.42, 0, 0.58, 1] },
+              opacity: { duration: 0.1, ease: easeInOut },
+              scale: { duration: 4, ease: easeInOut },
+              rotate: { duration: 4, ease: easeInOut },
             }}
             className="absolute inset-0"
           >
@@ -54,7 +54,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.8 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            transition={{ duration: 0.8, ease: easeInOut, delay: 0.2 }}
             className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow text-balance"
           >
             MAGIREJO SEMBODO
@@ -63,7 +63,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.8 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            transition={{ duration: 0.8, ease: easeInOut, delay: 0.4 }}
             className="mt-3 sm:mt-4 text-base sm:text-xl md:text-2xl text-white/90 drop-shadow text-balance"
           >
             selamat datang di Padukuhan Magirejo
@@ -72,7 +72,7 @@ export default function Home() {
             onClick={handleExplore}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+            transition={{ duration: 0.8, ease: easeInOut, delay: 0.6 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="group mt-6 sm:mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 sm:px-6 sm:py-3 text-white text-sm sm:text-base font-medium shadow-lg shadow-indigo-500/30 hover:from-indigo-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-transparent"
@@ -101,7 +101,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, ease: easeInOut }}
             className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
           >
             Sekilas Tentang Magirejo
@@ -111,7 +111,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, ease: easeInOut }}
               className="order-2 md:order-1 relative mx-auto w-full max-w-md overflow-hidden  bg-gradient-to-br p-6 sm:p-8"
             >
               <div className="relative mx-auto aspect-square md:aspect-video w-full">
@@ -132,7 +132,7 @@ export default function Home() {
               viewport={{ once: false, amount: 0.3 }}
               transition={{
                 duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
+                ease: easeInOut,
                 delay: 0.1,
               }}
               className="order-1 md:order-2 text-gray-700"
@@ -156,7 +156,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.7, ease: easeInOut }}
             className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
           >
             Visi dan Misi
@@ -168,7 +168,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, ease: easeInOut }}
               className="rounded-2xl border p-6 md:p-8 shadow-sm bg-white"
             >
               <h3 className="text-lg font-semibold text-gray-900">Visi</h3>
@@ -187,7 +187,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.7,
-                ease: [0.16, 1, 0.3, 1],
+                ease: easeInOut,
                 delay: 0.1,
               }}
               className="rounded-2xl border p-6 md:p-8 shadow-sm bg-white"
@@ -200,7 +200,7 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
                     duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: easeInOut,
                     delay: 0.05,
                   }}
                   className="pl-6 relative"
@@ -216,7 +216,7 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
                     duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: easeInOut,
                     delay: 0.1,
                   }}
                   className="pl-6 relative"
@@ -232,7 +232,7 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
                     duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: easeInOut,
                     delay: 0.15,
                   }}
                   className="pl-6 relative"
@@ -248,7 +248,7 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{
                     duration: 0.4,
-                    ease: [0.16, 1, 0.3, 1],
+                    ease: easeInOut,
                     delay: 0.2,
                   }}
                   className="pl-6 relative"
