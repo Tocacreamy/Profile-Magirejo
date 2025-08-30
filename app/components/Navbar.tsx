@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: "Organisasi", href: "/organisasi" },
     { name: "UMKM", href: "/umkm" },
     { name: "Fasilitas", href: "/fasilitas" },
+    {name: "Budaya", href:"/budaya"}
   ];
 
   return (
