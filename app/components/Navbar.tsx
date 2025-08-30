@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,8 +21,16 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <span className="text-white font-semibold text-lg">
-              Padukuhan Magirejo
+            <span className="text-black font-semibold text-lg">
+              <Link href="/" className="inline-flex items-center gap-2">
+                <Image
+                  src="/logo text landscape.svg"
+                  alt="Padukuhan Magirejo"
+                  width={100}
+                  height={100}
+                  priority
+                />
+              </Link>
             </span>
           </div>
 
@@ -32,7 +41,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-black hover:text-blue-500 px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
