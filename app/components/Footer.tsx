@@ -18,8 +18,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-sm text-gray-600">
-              Website resmi Padukuhan Magirejo, Desa Margomulyo, Kapanewon
-              Seyegan, Kabupaten Sleman.
+              
             </p>
           </div>
 
@@ -74,16 +73,14 @@ const Footer = () => {
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-gray-600">
               <li>Padukuhan Magirejo</li>
-              <li>Margomulyo, Seyegan, Sleman</li>
-              <li>Email: info@magirejo.com</li>
+              <li>Ngalang, Gedangsari, Gunungkidul</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 flex items-center justify-between border-t pt-6">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} Padukuhan Magirejo. All rights
-            reserved.
+            © {new Date().getFullYear()} Padukuhan Magirejo. Terakhir di Update Adgustus 2025
           </p>
           <div className="flex gap-4 text-xs">
             <a
