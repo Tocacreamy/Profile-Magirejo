@@ -21,11 +21,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} antialiased`}>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${poppins.variable} antialiased min-h-screen flex flex-col bg-white text-gray-900 selection:bg-indigo-200/60 selection:text-indigo-900`}
+      >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 rounded bg-indigo-600 px-3 py-2 text-white"
+        >
+          Lewati ke konten
+        </a>
         <Navbar />
-        {children}
-        <Footer/>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

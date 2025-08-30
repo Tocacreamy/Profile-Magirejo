@@ -45,24 +45,26 @@ export default function Home() {
               sizes="100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/30" />
           </motion.div>
         </AnimatePresence>
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow"
+            className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow text-balance"
           >
             MAGIREJO SEMBODO
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            className="mt-4 text-lg md:text-2xl text-white/90 drop-shadow"
+            className="mt-3 sm:mt-4 text-base sm:text-xl md:text-2xl text-white/90 drop-shadow text-balance"
           >
             selamat datang di Padukuhan Magirejo
           </motion.p>
@@ -73,7 +75,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-white font-medium shadow-lg shadow-indigo-500/30 hover:from-indigo-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-transparent"
+            className="group mt-6 sm:mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 sm:px-6 sm:py-3 text-white text-sm sm:text-base font-medium shadow-lg shadow-indigo-500/30 hover:from-indigo-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-transparent"
             aria-label="Jelajahi"
           >
             <span>Jelajahi</span>
@@ -88,9 +90,64 @@ export default function Home() {
           </motion.button>
         </div>
       </section>
+
+      {/* Section konten dengan efek muncul saat discroll */}
+      <section
+        id="jelajahi"
+        className="relative w-full bg-white scroll-mt-20 md:scroll-mt-24"
+      >
+        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
+          >
+            Sekilas Tentang Magirejo
+          </motion.h2>
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 items-center gap-6 sm:gap-10 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="order-2 md:order-1 relative mx-auto w-full max-w-md overflow-hidden  bg-gradient-to-br p-6 sm:p-8"
+            >
+              <div className="relative mx-auto aspect-square md:aspect-video w-full">
+                <Image
+                  src="/logo text landscape.svg"
+                  alt="Logo Padukuhan Magirejo"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              className="order-1 md:order-2 text-gray-700"
+            >
+              <p className="text-sm sm:text-base leading-relaxed">
+                Padukuhan Magirejo adalah komunitas yang menjunjung tinggi nilai
+                kebersamaan, gotong royong, dan pelestarian budaya. Berbagai
+                program pemberdayaan, ekonomi kreatif, serta kegiatan sosial
+                dilaksanakan secara berkelanjutan untuk mewujudkan lingkungan
+                yang maju dan harmonis.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Section Visi dan Misi */}
       <section id="visi-misi" className="relative w-full bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-4 py-12 md:py-12">
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,71 +245,6 @@ export default function Home() {
                   melalui penghijauan, pengelolaan air, serta upaya konservasi.
                 </motion.li>
               </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section konten dengan efek muncul saat discroll */}
-      <section id="jelajahi" className="relative w-full bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-16 md:py-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
-          >
-            Sekilas Tentang Magirejo
-          </motion.h2>
-          <div className="mt-10 grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative mx-auto w-full max-w-md overflow-hidden bg-gradient-to-br p-8"
-            >
-              <div className="relative mx-auto aspect-video w-full">
-                <Image
-                  src="/logo text landscape.svg"
-                  alt="Logo Padukuhan Magirejo"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-              className="text-gray-700"
-            >
-              <p className="text-base leading-relaxed">
-                Padukuhan Magirejo adalah komunitas yang menjunjung tinggi nilai
-                kebersamaan, gotong royong, dan pelestarian budaya. Berbagai
-                program pemberdayaan, ekonomi kreatif, serta kegiatan sosial
-                dilaksanakan secara berkelanjutan untuk mewujudkan lingkungan
-                yang maju dan harmonis.
-              </p>
-              {/* <ul className="mt-6 space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
-                  Penguatan kapasitas masyarakat melalui pelatihan dan kegiatan.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
-                  Pelestarian tradisi dan budaya lokal secara inklusif.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-blue-600" />
-                  Sinergi antarwarga untuk pembangunan berkelanjutan.
-                </li>
-              </ul> */}
             </motion.div>
           </div>
         </div>
