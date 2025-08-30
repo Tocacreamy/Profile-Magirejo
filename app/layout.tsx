@@ -13,6 +13,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Profile Padukuhan Magirejo",
   description: "Profile Padukuhan Magirejo",
+  icons: {
+    icon: "/logo text.svg",
+  },
 };
 
 export default function RootLayout({
