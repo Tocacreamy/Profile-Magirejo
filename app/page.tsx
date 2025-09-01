@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion, easeInOut } from "framer-motion";
 import { carouselImages } from "@/app/lib/carouselImages";
 
@@ -73,7 +74,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: easeInOut, delay: 0.4 }}
             className="mt-3 sm:mt-4 text-base sm:text-xl md:text-2xl text-white/90 drop-shadow text-balance"
           >
-            selamat datang di Padukuhan Magirejo
+            Selamat datang di Padukuhan Magirejo
           </motion.p>
           <motion.button
             onClick={handleExplore}
@@ -154,6 +155,30 @@ export default function Home() {
                 Mandiri Budaya dengan semangat melestarikan kearifan lokal dan
                 membangun masyarakat yang sehat serta sejahtera.
               </p>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: easeInOut, delay: 0.15 }}
+                className="mt-5 sm:mt-6"
+              >
+                <Link
+                  href="/tentang"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-white text-sm sm:text-base font-medium shadow-lg shadow-indigo-500/30 hover:from-indigo-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  aria-label="Pelajari lebih lanjut tentang Padukuhan Magirejo"
+                >
+                  <span>Tentang Magirejo</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                  >
+                    <path d="M13.5 4.5a.75.75 0 0 0 0 1.5h4.19l-9.22 9.22a.75.75 0 1 0 1.06 1.06l9.22-9.22V11.5a.75.75 0 0 0 1.5 0v-6a1 1 0 0 0-1-1h-6a.75.75 0 0 0-.75.75Z" />
+                  </svg>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>
