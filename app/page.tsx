@@ -138,11 +138,14 @@ export default function Home() {
               className="order-1 md:order-2 text-gray-700"
             >
               <p className="text-sm sm:text-base leading-relaxed">
-                Padukuhan Magirejo adalah komunitas yang menjunjung tinggi nilai
-                kebersamaan, gotong royong, dan pelestarian budaya. Berbagai
-                program pemberdayaan, ekonomi kreatif, serta kegiatan sosial
-                dilaksanakan secara berkelanjutan untuk mewujudkan lingkungan
-                yang maju dan harmonis.
+                Dusun Magirejo terletak di wilayah perbukitan kapur Gunungkidul,
+                tepatnya di Kalurahan Ngalang, Kapanewon Gedangsari. Mayoritas
+                penduduk bermata pencaharian sebagai petani dan peternak, serta
+                masih menjunjung tinggi budaya gotong royong. Tradisi lokal
+                seperti karawitan, jathilan, rebana, dan rasulan masih terjaga
+                hingga kini. Selain itu, Magirejo juga ikut berperan dalam Desa
+                Mandiri Budaya dengan semangat melestarikan kearifan lokal dan
+                membangun masyarakat yang sehat serta sejahtera.
               </p>
             </motion.div>
           </div>
