@@ -11,10 +11,81 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Profile Padukuhan Magirejo",
-  description: "Profile Padukuhan Magirejo",
+  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
+    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
+    : undefined,
+  title: {
+    default: "Profil Padukuhan Magirejo",
+    template: "%s | Padukuhan Magirejo",
+  },
+  description:
+    "Profil resmi Padukuhan Magirejo, Ngalang, Gedangsari, Gunungkidul: informasi dusun, organisasi, UMKM, fasilitas, budaya, dan visi misi.",
+  keywords: [
+    "Padukuhan Magirejo",
+    "Magirejo",
+    "Ngalang",
+    "Gedangsari",
+    "Gunungkidul",
+    "Profil Dusun",
+    "UMKM Magirejo",
+    "Budaya",
+    "Fasilitas",
+    "Organisasi",
+  ],
+  applicationName: "Profil Padukuhan Magirejo",
+  generator: "Next.js",
+  authors: [{ name: "Padukuhan Magirejo" }],
+  creator: "Padukuhan Magirejo",
+  publisher: "Padukuhan Magirejo",
+  category: "community",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "/",
+    title: "Profil Padukuhan Magirejo",
+    description:
+      "Informasi resmi Padukuhan Magirejo: tentang, organisasi, UMKM, fasilitas, budaya, dan visi misi.",
+    siteName: "Padukuhan Magirejo",
+    images: [
+      {
+        url: "/logo text landscape.svg",
+        width: 1200,
+        height: 630,
+        alt: "Padukuhan Magirejo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Profil Padukuhan Magirejo",
+    description:
+      "Informasi resmi Padukuhan Magirejo: tentang, organisasi, UMKM, fasilitas, budaya, dan visi misi.",
+    images: [
+      {
+        url: "/logo text landscape.svg",
+        alt: "Padukuhan Magirejo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    google: "qBipZ2SQ24p9bFk5Wo4qefDoIMSn8Agh_QolWUy3tjA",
+  },
+  themeColor: "#ffffff",
   icons: {
     icon: "/logo text.svg",
+    shortcut: "/logo text.svg",
+    apple: "/logo text.svg",
   },
 };
 
@@ -23,8 +94,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="id" className="scroll-smooth">
       <body
         className={`${poppins.variable} antialiased min-h-screen flex flex-col bg-white text-gray-900 selection:bg-indigo-200/60 selection:text-indigo-900`}
       >
@@ -34,6 +106,20 @@ export default function RootLayout({
         >
           Lewati ke konten
         </a>
+        {/* Structured Data: WebSite */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Padukuhan Magirejo",
+              url: siteUrl || undefined,
+              inLanguage: "id-ID",
+            }),
+          }}
+        />
         <Navbar />
         <main id="main-content" className="flex-1">
           {children}
