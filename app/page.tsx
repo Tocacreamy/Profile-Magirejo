@@ -20,6 +20,13 @@ export default function Home() {
   }, []);
 
   const current = carouselImages[index];
+  const stats = [
+    { label: "RT", value: 4 },
+    { label: "KK", value: 223 },
+    { label: "Jiwa", value: 620 },
+    { label: "Laki-laki", value: 298 },
+    { label: "Perempuan", value: 322 },
+  ];
 
   return (
     <>
@@ -278,6 +285,52 @@ export default function Home() {
               </ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Statistik Penduduk */}
+      <section id="statistik" className="relative w-full bg-white">
+        <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: easeInOut }}
+            className="text-2xl md:text-3xl font-bold text-gray-900 text-center"
+          >
+            Statistik Penduduk
+          </motion.h2>
+
+          <motion.ul
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: easeInOut, delay: 0.1 }}
+            className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3 md:grid-cols-5"
+            aria-label="Statistik penduduk Padukuhan Magirejo"
+          >
+            {stats.map((s, idx) => (
+              <motion.li
+                key={s.label}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{
+                  duration: 0.4,
+                  ease: easeInOut,
+                  delay: 0.05 * idx,
+                }}
+                className="rounded-2xl border bg-white p-4 sm:p-5 shadow-sm"
+              >
+                <p className="text-xs sm:text-sm font-medium text-gray-600">
+                  {s.label}
+                </p>
+                <p className="mt-1 text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900">
+                  {s.value.toLocaleString("id-ID")}
+                </p>
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
       </section>
     </>
