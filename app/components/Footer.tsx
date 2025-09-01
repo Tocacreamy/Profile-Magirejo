@@ -64,6 +64,14 @@ const Footer = () => {
                   Fasilitas
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/budaya"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Budaya
+                </Link>
+              </li>
             </ul>
           </div>
 
