@@ -44,14 +44,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "/",
+    url: "https://magirejosembodo.vercel.app/",
     title: "Profil Padukuhan Magirejo",
     description:
       "Informasi resmi Padukuhan Magirejo: tentang, organisasi, UMKM, fasilitas, budaya, dan visi misi.",
     siteName: "Padukuhan Magirejo",
     images: [
       {
-        url: "/logo text landscape.svg",
+        url: "/logo text.png",
         width: 1200,
         height: 630,
         alt: "Padukuhan Magirejo",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
       "Informasi resmi Padukuhan Magirejo: tentang, organisasi, UMKM, fasilitas, budaya, dan visi misi.",
     images: [
       {
-        url: "/logo text landscape.svg",
+        url: "/logo text.png",
         alt: "Padukuhan Magirejo",
       },
     ],
